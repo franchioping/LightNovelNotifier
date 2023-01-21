@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/lightNovelBot.iml" filepath="$PROJECT_DIR$/.idea/lightNovelBot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/LightNovelNotifier.iml" filepath="$PROJECT_DIR$/.idea/LightNovelNotifier.iml" />
     </modules>
   </component>
 </project>

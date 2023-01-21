@@ -13,7 +13,7 @@ class DataFile:
     def _get_guilds(self) -> dict:
         return self.data["guilds"]
 
-    def _get_lns(self, guild: int | discord.Guild) -> list[dict]:
+    def get_lns(self, guild: int | discord.Guild) -> list[dict]:
         return self._get_guild(guild)["light_novels"]
 
     def _get_guild(self, guild: int | discord.Guild):
@@ -32,15 +32,37 @@ class DataFile:
         guild_list: dict = self.data["guilds"]
         return [int(x) for x in list(guild_list.keys())]
 
+    def set_guild_ln_category_id(self, guild: int | discord.Guild, value: int) -> None:
+        guild_id = guild if type(guild) == int else guild.id
+        self._get_guild(guild_id)["ln_category"] = value
+
+    def get_guild_ln_category_id(self, guild: int | discord.Guild) -> int:
+        guild_id = guild if type(guild) == int else guild.id
+        return int(self._get_guild(guild_id)["ln_category"])
+
+    def set_guild_select_channel_id(self, guild: int | discord.Guild, value: int) -> None:
+        guild_id = guild if type(guild) == int else guild.id
+        self._get_guild(guild_id)["select_channel_id"] = value
+
     def get_guild_select_channel_id(self, guild: int | discord.Guild) -> int:
         guild_id = guild if type(guild) == int else guild.id
         return int(self._get_guild(guild_id)["select_channel_id"])
+
+    def set_guild_select_message_id(self, guild: int | discord.Guild, value: int) -> None:
+        guild_id = guild if type(guild) == int else guild.id
+        self._get_guild(guild_id)["select_message_id"] = value
 
     def get_guild_select_message_id(self, guild: int | discord.Guild) -> int:
         guild_id = guild if type(guild) == int else guild.id
         return int(self._get_guild(guild_id)["select_message_id"])
 
     def add_ln(self, guild: int | discord.Guild, ln: light_novel.LightNovel):
-        self._get_lns(guild).append(ln.to_dict())
+        self.get_lns(guild).append(ln.to_dict())
         print(self.data)
         self._save()
+
+    def update_ln(self, guild: int | discord.Guild, ln: light_novel.LightNovel):
+        lns = self._get_guild(guild)["light_novels"]
+        for i in range(len(lns)):
+            if lns[i]["private_name"] == ln.private_name:
+                lns[i] = ln.to_dict()

@@ -10,7 +10,6 @@ class LightNovelApi:
             "euconsent-v2": "CPlREsAPlREsAAKAtAENCyCsAP_AAH_AACgAJNNd_H__bW9r-f5_aft0eY1P9_rz7uQzDhfNk-4F3L_W_LwX52E7NF36tq4KmR4ku1LBIUNlHNHUDUmwaokVryHsak2cpTNKJ7BEknMZOydYGF9vmxtj-QKY5v5_d3bx2D-t_9v-39z3z81Xn3d5_-_02PCdV5_9Dfn9fR_b89KP9_78v4v8_____3_e__3_7997_H8EmwCTDVuIAuzLHBm0DCKBECMKwkIoFABBQDC0QEADg4KdlYBPrCBAAgFAEYEQIcAUYEAgAAEgCQiACQIsEAAAIgEAAIAEAiEADAwCCwAsDAIAAQDQMUQoABAkAMiAiKUwICoEggJbKhBKC6Q0wgCrLACgERsFAAiCQEVgACAsHAMESAlYsECTFG-QAjBCgFEqFaik9NAA.flgAAAAAAAAA",
             "lncoreantifrg": "CfDJ8FBkhIgVIu9DkfAIt6P2U0i1XSeOUEZ8GnC0aCjMDLQ1Zk5aiVKMucQk8NxnHZsFTbzE8ppLZZhl__2p9j0wTqihG1RnMuypb2_t_DabAFaP_hEm7bxfJ0_3zsRGkdH997TZrqAjdkoh_uGBAUWyG2w",
             "lnusrconf": "16,default,false,black,purple,en,0,1"
-
         }
 
         self.headers = {'User-Agent': 'Mozilla/5.0', 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
