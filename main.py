@@ -59,6 +59,7 @@ async def refresh_ln(ctx: discord.ext.commands.Context):
     await check_new_chapters()
     await ctx.send("Done")
 
+
 @bot.command()
 @commands.check_any(is_guild_owner())
 async def add_ln(ctx: discord.ext.commands.Context, *args):
@@ -92,7 +93,8 @@ async def add_ln(ctx: discord.ext.commands.Context, *args):
     new_content = content + "\n" + name + " - " + ln_emoji
     await select_message.edit(content=new_content)
 
-    await ctx.send(f"/reactionrole add message_id:{select_message.id} emoji:{ln_emoji} role:{notification_role.mention}")
+    await ctx.send(
+        f"/reactionrole add message_id:{select_message.id} emoji:{ln_emoji} role:{notification_role.mention} channel:{select_channel.mention}")
 
 
 @tasks.loop(seconds=int(config["delay"]))
