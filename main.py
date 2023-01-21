@@ -55,6 +55,12 @@ async def get_data(ctx: discord.ext.commands.Context):
 
 @bot.command()
 @commands.check_any(is_guild_owner())
+async def refresh_ln(ctx: discord.ext.commands.Context):
+    await check_new_chapters()
+    await ctx.send("Done")
+
+@bot.command()
+@commands.check_any(is_guild_owner())
 async def add_ln(ctx: discord.ext.commands.Context, *args):
     if len(args) != 2:
         await ctx.send("Wrong Usage")
